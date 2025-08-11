@@ -1,0 +1,476 @@
+@font-face {
+    font-family: 'titulo'; 
+    src: url('/font/titulo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'sutitulo'; 
+    src: url('/font/sutitulo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+::selection {
+    background: #c72623ab;   
+    color: #fff;           
+}
+
+body {
+    background-color: #140d08;
+    color: aliceblue;
+    margin: auto;
+    width: 70%;
+    height: 100%;
+    -webkit-font-smoothing: antialiased; /* Melhora renderização de fontes */
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+#mouse-light {
+    position: fixed;
+    pointer-events: none; /* Não interfere nos cliques */
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(175, 104, 24, 0.185); /* Tom mais claro e transparente */
+    filter: blur(50px); /* Desfoque */
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.header {
+    margin: 0;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+}
+#logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: aliceblue;
+    font-size: 1.5rem;
+    font-family: titulo;
+}
+#logo img {
+    width: fit-content;
+    height: 40px;
+    filter: drop-shadow(1px 1px 0px #ffffff) drop-shadow(1px 1px 0px #c72523);
+}
+
+.header img {
+    width: 20%;
+    height: 20%;
+    margin-top: 5px;
+}
+.header nav a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    position: relative; 
+}
+.header nav a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: aliceblue;
+    transition: width 0.8s ease;
+}
+.header nav a:hover::after {
+    width: 100%;
+    
+}
+/*Sessão sobre mim com artigo*/
+.sobre-mim {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+#avatar {
+    width: 40%;
+    height: 40%;
+}
+.sobre-mim h2 {
+    font-size: 2.4rem;
+    margin: 0;
+    margin-top: 50px;
+    font-family: titulo;
+}
+.sobre-mim p {
+    font-size: 1.3rem;
+    margin: 0;
+    margin-top: 10px;
+}
+.sobre-mim h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    font-family: subtitulo;
+}
+#contato {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 5px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+#contato a img {
+    width: 50px;
+    margin: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Suavidade na animação */
+}
+#contato a img:hover {
+    transform: translateY(6px); /* Move o ícone para baixo */
+}
+#ver-sobre-mim{
+    margin: 0;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #c7252383;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#ver-sobre-mim:hover {
+    background-color: #c72523;
+    color: white;
+}
+/*Projetos*/
+.project {
+    display: flex;
+    flex-direction: row;
+    background-color: #3b201e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.project p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+#titulo-projeto {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.tag {
+    margin: 0;
+    margin-left: 10px;
+    padding: 4px 12px;
+    width: fit-content;
+    background-color: #fae0e0;      /* Azul claro suave */
+    border-radius: 8px;
+    color: #790e00;                 /* Verde escuro para contraste */
+    font-size: 1rem;
+    font-weight: bold;              /* Deixa o texto mais marcante */
+    letter-spacing: 0.5px;          /* Espaçamento entre letras */
+    box-shadow: 0 2px 6px #0001;    /* Sombra leve para destacar */
+    text-shadow: none;              /* Remove sombra do texto para mais clareza */
+    transition: background 0.3s, color 0.3s;
+}
+.project img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+.project img:hover {
+    animation: levitar 0.8s infinite alternate;
+}
+
+@keyframes levitar {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+.project-text {
+    margin: 0;
+}
+.project-text h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: #000000 0px 0px 10px;
+}
+.project-text h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: subtitulo;
+    color: #f7f7f7d3;
+}
+.project-text p {
+    font-size: 1.1rem;
+    margin: 0;
+    font-family: subtitulo;
+    color: #f7f7f7da;
+    margin-top: 10px;
+}
+/*Planos*/
+#cabeçalho-planos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    justify-content: space-between
+}
+.container-planos {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Espaçamento entre os planos */
+    margin: 0;
+}
+#ver-todos-os-planos {
+    margin: 0;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+#ver-todos-os-planos:hover {
+    color: #31d71b;
+    text-decoration: underline;
+}
+.plano {
+    background-color: #3b201e;
+    border-radius: 10px;
+    flex: 1; /* Cada plano ocupa o mesmo espaço */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.plano:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.plano p {
+    text-align: left;
+    font-weight: bold;
+    color: #f7f7f7da;
+    margin-left: 16px;
+}
+.preço {
+    font-size: 1.3rem;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.plano img {
+    height: 200px;
+    width: 100%;
+    margin: 0;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.tag-pai{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-left: 5px;
+}
+/*Rodapé*/
+.rodape {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    background-color: #3b201e;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: space-around;
+}
+.contato {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.sobre-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+.sobre-rodape h1 {
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.sobre-rodape p {
+    font-size: 1.1rem;
+    margin: 0;  
+    text-align: start; 
+}
+#criar-projeto {
+    margin: 0;
+    margin-top: 27px;
+    background-color: #c7252383;
+    color: white;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+#criar-projeto:hover {
+    background-color: #c72523;
+    color: white;
+}
+.contato p, .contato a {
+    margin: 0;
+    color: aliceblue;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+.contato a:hover {
+    color: #c72523;
+    text-decoration: underline;
+}
+
+/*PÁGINA SOBRE MIM*/
+.sobre-mim2 {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+.sobre-mim2 h1 {
+    font-size: 2.4rem;
+    margin: 0;
+    margin-top: 50px;
+}
+.sobre-mim2 h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    margin-top: 0px;
+}
+.sobre-mim2 p {
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top: 10px;
+    width: 80%;
+}
+#eu {
+    box-shadow: #c72523 7px 7px 0px;
+    width: 300px;
+    margin-top: 40px;
+}
+/*Experiancias profissionais*/
+.container-pai{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.experiencia-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    background-color: #c7262348;
+    border-radius: 10px;
+    padding: 10px;
+    width: 30%;
+}
+.experiencia-container div {
+    display: flex;
+    flex-direction: column;
+}
+.experiencia-container div h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 18px;
+}
+.experiencia-container div p {
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top: 5px;
+    color: #9ca3af; /* Cor cinza claro */
+}
+.experiencia-container img {
+    height: 60px;
+    margin: 0;
+}
+/*Habilidades container*/
+.habilidades-container {
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que as habilidades se ajustem em várias linhas */
+    gap: 10px; /* Espaçamento entre as habilidades */
+    margin-top: 20px;
+}
+.habilidades-container img {
+    width: 70px; /* Tamanho fixo para os ícones */
+    height: 70px; /* Tamanho fixo para os ícones */
+    transition: transform 0.3s ease; /* Efeito de transição suave */
+    filter: drop-shadow(2px 2px 1px #c7262348); /* Sombra ajustada ao formato */
+}
+/*Página planos*/
+.proposta1{
+    display:flex ;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+}
+.proposta1 img {
+    width: 70%;
+    height: 80%;
+    margin: 0;
+}
+.proposta1 p {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+#copi {
+    font-size: 1.3rem;
+}
+.tag-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+.tag1 {
+    margin: 0;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #c7262348;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+.descricao {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;   
+}
+.descricao h1 {
+    font-size: 2.4rem;
+    margin: 0;
+}
